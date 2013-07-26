@@ -2,7 +2,7 @@
 
 A talk that serves as an introduction to TDD (Test driven development) for Rubyists.
 
-[Check out the slides](http://svs.github.io/TDD101)
+[Check out the slides](http://svs.github.io/tdd101)
 
 ## License
 
