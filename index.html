@@ -1,71 +1,183 @@
 <!doctype html>
-<html>
+<html lang='en'>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Tdd101 by svs</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset='utf-8'>
+    <title>reveal.js - The HTML Presentation Framework</title>
+    <meta content='A framework for easily creating beautiful presentations using HTML' name='description'>
+    <meta content='Hakim El Hattab' name='author'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='css/main.css' rel='stylesheet'>
+    <link href='css/theme/default.css' id='theme' rel='stylesheet'>
+    <!-- For syntax highlighting -->
+    <link href='lib/css/zenburn.css' rel='stylesheet'>
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+    <script src="lib/js/html5shiv.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Tdd101</h1>
-        <p>TDD 101</p>
-
-        <p class="view"><a href="https://github.com/svs/tdd101">View the Project on GitHub <small>svs/tdd101</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/svs/tdd101/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/svs/tdd101/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/svs/tdd101">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/svs">svs</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <div class='reveal'>
+      <!-- Used to fade in a background when a specific slide state is reached -->
+      <div class='state-background'></div>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class='slides'>
+        <section>
+          <h1>TDD 101</h1>
+          <h3>Stress free productivity</h3>
+        </section>
+        <section>
+          <h1>Who are we?</h1>
+          <h2>
+            <strong>
+              @_svs_
+            </strong>
+          </h2>
+          <h3>https://github.com/svs</h3>
+          <h3 class='fragment'>rubyist since 2008</h3>
+          <h3 class='fragment'>creator of dm-pg-types gem</h3>
+        </section>
+        <section>
+          <h1>Who are we?</h1>
+          <h2>
+            <strong>
+              @_svs_
+            </strong>
+          </h2>
+          <h3 class='fragment'>co-founder of <strong>digiDoc</strong> (http://digidoc.co.in) and <strong>rBus</strong> (http://rBus.in)</h3>
+          <h3 class='fragment'>co-founder of <strong>wrok.in</strong></h3>
+          <h3 class='fragment'>Currently CTO at <strong>embibe.com</strong></h3>
+        </section>
+        <section>
+          <h1>Who are we?</h1>
+          <h2>
+            <strong>
+              @_anshulk
+            </strong>
+          </h2>
+          <h3>https://github.com/anshul</h3>
+          <h3 class='fragment'>rubyist since 2007</h3>
+          <h3 class='fragment'>co-founder of <strong>CubicTree</strong> ( tech solutions for the law sector)</h3>
+          <h3 class='fragment'>co-founder of <strong>wrok.in</strong></h3>
+          <h3 class='fragment'>Currently VP Data and Engg at <strong>embibe.com</strong></h3>
+        </section>
+        <section>
+          <h3>WHAT DO WE WANT AS DEVELOPERS?</h3>
+          <img class='fragment' src='images/happy-programmer.jpg'>
+          <div class='fragment'>We "write" and "deploy" software. Both of these must be fun.</div>
+          <div class='fragment'>We don't want to do "boring stuff"</div>
+          <div class='fragment'>We want time to play with cool new stuff</div>
+        </section>
+        <section>
+          <h3>BUT INSTEAD!</h3>
+          <div class='fragment'>Manual deployments (error prone, boring)</div>
+          <div class='fragment'>Stressful failed deployments</div>
+          <div class='fragment'>Regressions (didn't I just fix this bug?)</div>
+          <div class='fragment'>Undocumented code</div>
+          <div class='fragment'>Complex code</div>
+          <div class='fragment'>Undefined behaviour</div>
+        </section>
+        <section>
+          <h3>BUT INSTEAD!</h3>
+          <img src='images/stressed-coder.jpg' width='200%'>
+        </section>
+        <section>
+          <h2>IF ONLY....</h2>
+          <h2>..there were some way</h2>
+          <p>
+            <i>that we could <strong>automatically verify</strong> the correctness of our programs?</i>
+          </p>
+        </section>
+        <section>
+          <img class='fragment' src='images/morpheus.jpg' width='150%'>
+        </section>
+        <section>
+          <blockquote>
+            <span class='fragment'></span>
+            Use computers to do work
+            <span class='fragment'>
+              Use humans to drink beer with
+            </span>
+          </blockquote>
+          <br>
+            <i class='fragment'>- Zach Holman</i>
+          </br>
+        </section>
+        <section>
+          <h1>RSpec</h1>
+          <p>
+            <i>RSpec let's you write <strong>executable specifications</strong> for your Ruby programs</i>
+          </p>
+          <img class='fragment' src='images/rspec.png'>
+        </section>
+        <section>
+          <h2>What is TDD?</h2>
+          <p class='fragment'>
+            <i>Making <strong>testing a first class concern</strong> while developing.</i>
+          </p>
+          <h2 class='fragment'>Why?</h2>
+          <ul>
+            <li class='fragment'>
+              <i>The same things that make your code <strong>easy to test</strong>, make it <strong>easy to change</strong>!</i>
+            </li>
+            <li class='fragment'>
+              <i>Guarantee <strong>behaviour</strong>.</i>
+            </li>
+            <li class='fragment'>
+              <i><strong>Refactor</strong> LIKE A BOSS!</i>
+            </li>
+            <li class='fragment'>
+              <i><strong>Deploy</strong> LIKE A BOSS!</i>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h1>BUT....</h1>
+          <div class='fragment'>it's time consuming</div>
+          <div class='fragment'>it's expensive</div>
+          <div class='fragment'>it's BORING!</div>
+        </section>
+        <section>
+          That's ok. It's called the learning curve!
+          <img class='fragment' src='images/learning-curve.png'>
+        </section>
+      </div>
+      <!-- The navigational controls UI -->
+      <aside class='controls'>
+        <a class='left' href='#'><</a>
+        <a class='right' href='#'>></a>
+        <a class='up' href='#'>^</a>
+        <a class='down' href='#'>!</a>
+      </aside>
+      <!-- Presentation progress bar -->
+      <div class='progress'>
+        <span></span>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+    <script src='lib/js/head.min.js'></script>
+    <script src='js/reveal.min.js'></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      
+      theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+      
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+      { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+      ]
+      });
+    </script>
   </body>
 </html>

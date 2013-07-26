@@ -1,0 +1,148 @@
+<!doctype html>
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title reveal.js - The HTML Presentation Framework
+    %meta{:content => "A framework for easily creating beautiful presentations using HTML", :name => "description"}/
+    %meta{:content => "Hakim El Hattab", :name => "author"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    %link#theme{:href => "css/theme/default.css", :rel => "stylesheet"}/
+    / For syntax highlighting
+    %link{:href => "lib/css/zenburn.css", :rel => "stylesheet"}/
+    :javascript
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    <script src="lib/js/html5shiv.js"></script>
+  %body
+    .reveal
+      / Used to fade in a background when a specific slide state is reached
+      .state-background
+      / Any section element inside of this container is displayed as a slide
+      .slides
+        %section
+          %h1 TDD 101
+          %h3 Stress free productivity
+        %section
+          %h1 Who are we?
+          %h2
+            %strong
+              = "@_svs_"
+          %h3 https://github.com/svs
+          %h3.fragment rubyist since 2008
+          %h3.fragment creator of dm-pg-types gem
+        %section
+          %h1 Who are we?
+          %h2
+            %strong
+              = "@_svs_"
+          %h3.fragment co-founder of <strong>digiDoc</strong> (http://digidoc.co.in) and <strong>rBus</strong> (http://rBus.in)
+          %h3.fragment co-founder of <strong>wrok.in</strong>
+          %h3.fragment Currently CTO at <strong>embibe.com</strong>
+
+        %section
+          %h1 Who are we?
+          %h2
+            %strong
+              = "@_anshulk"
+          %h3= "https://github.com/anshul"
+          %h3.fragment rubyist since 2007
+          %h3.fragment co-founder of <strong>CubicTree</strong> ( tech solutions for the law sector)
+          %h3.fragment co-founder of <strong>wrok.in</strong>
+          %h3.fragment Currently VP Data and Engg at <strong>embibe.com</strong>
+
+
+        %section
+          %h3 WHAT DO WE WANT AS DEVELOPERS?
+          %img.fragment{:src => "images/happy-programmer.jpg"}
+          .fragment We "write" and "deploy" software. Both of these must be fun.
+          .fragment We don't want to do "boring stuff"
+          .fragment We want time to play with cool new stuff
+
+        %section
+          %h3 BUT INSTEAD!
+          .fragment Manual deployments (error prone, boring)
+          .fragment Stressful failed deployments
+          .fragment Regressions (didn't I just fix this bug?)
+          .fragment Undocumented code
+          .fragment Complex code
+          .fragment Undefined behaviour
+        %section
+          %h3 BUT INSTEAD!
+          %img{:src => "images/stressed-coder.jpg", :width => "200%"}
+        %section
+          %h2 IF ONLY....
+          %h2 ..there were some way
+          %p
+            %i that we could <strong>automatically verify</strong> the correctness of our programs?
+        %section
+          %img.fragment{:src => "images/morpheus.jpg", :width => "150%"}
+        %section
+          %blockquote
+            %span.fragment
+            Use computers to do work
+            %span.fragment
+              Use humans to drink beer with
+          %br
+            %i.fragment - Zach Holman
+        %section
+          %h1 RSpec
+          %p
+            %i RSpec let's you write <strong>executable specifications</strong> for your Ruby programs
+          %img.fragment{:src => "images/rspec.png"}
+        %section
+          %h2 What is TDD?
+          %p.fragment
+            %i Making <strong>testing a first class concern</strong> while developing.
+          %h2.fragment Why?
+          %ul
+            %li.fragment
+              %i The same things that make your code <strong>easy to test</strong>, make it <strong>easy to change</strong>!
+            %li.fragment
+              %i Guarantee <strong>behaviour</strong>.
+            %li.fragment
+              %i <strong>Refactor</strong> LIKE A BOSS!
+            %li.fragment
+              %i <strong>Deploy</strong> LIKE A BOSS!
+        %section
+          %h1 BUT....
+          .fragment it's time consuming
+          .fragment it's expensive
+          .fragment it's BORING!
+        %section
+          That's ok. It's called the learning curve!
+          %img.fragment{:src => "images/learning-curve.png"}
+
+      / The navigational controls UI
+      %aside.controls
+        %a.left{:href => "#"} <
+        %a.right{:href => "#"} >
+        %a.up{:href => "#"} ^
+        %a.down{:href => "#"} !
+      / Presentation progress bar
+      .progress
+        %span
+    %script{:src => "lib/js/head.min.js"}
+    %script{:src => "js/reveal.min.js"}
+    :javascript
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+
+      theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+      { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+      ]
+      });
