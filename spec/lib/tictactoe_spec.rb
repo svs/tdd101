@@ -69,10 +69,9 @@ describe TicTacToe do
             let(:row_winning_moves) {[[0,0],[1,1],[0,1],[2,2],[0,2]]}
             let(:row_won_game) { game_with_two_players.tap{|g| row_winning_moves.each {|m| g.add_move(m[0],m[1])}}}
             subject { row_won_game }
-            its(:rows_won?) { should be_true }
-            #it { should be_won }
-            #it { should be_finished }
-            #its(:winner) { should == "foo" }
+            it { should be_won }
+            it { should be_finished }
+            its(:winner) { should == "foo" }
           end
         end
       end

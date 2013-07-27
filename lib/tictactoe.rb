@@ -1,73 +1,53 @@
 class TicTacToe
 
+  attr_accessor :players, :moves
+
   def initialize
-    @players = @moves = []
+    @players = []
+    @moves = []
   end
 
-  def startable?
-    @players.count == 2
+  def current_player
+    players[moves.count % 2] if started?
   end
 
   def started?
-    @started
+    players.count == 2
+  end
+
+  def add_move(x,y)
+    raise ArgumentError unless started?
+    raise ArgumentError if moves.include?([x,y])
+    raise ArgumentError.new("Moves should be between [0,0] and [2,2]") if (x < 0 || x > 2 || y < 0 || y > 2)
+    moves << [x,y]
   end
 
   def finished?
-    won? || board_full?
   end
 
-  def players
-    @players
+  def won?
+    columns_won? || rows_won? || diagonals_won?
   end
 
   def winner
   end
 
-  def add_player(player)
-    @players << player
-    @started = true if startable?
-  end
-
-  def current_player
-    @players[@moves.count.odd? ? 1 : 0]
-  end
-
-  def add_move(x,y)
-    raise ArgumentError.new("Invalid move") unless valid_move?(x,y)
-    @moves << [x,y]
+  def add_player(name)
+    raise ArgumentError if started?
+    players << name
   end
 
   private
 
-  def valid_move?(x,y)
-    x >= 0 && x < 3 && 
-      y >= 0 && y < 3 && 
-      !@moves.include?([x,y])
+  def columns_won?
   end
 
-  def board_full?
-    @moves.count == 9
-  end
-
-  def won?
-    row_won? || column_won? || diagonals_won?
-  end
-
-  def first_players_moves
-    moves.each_slice(2).map(&:first)
-  end
-
-  def second_players_moves
-    moves.each_slice(2).map(&:last)
-  end
-
-  def row_won?
-  end
-
-  def column_won?
+  def rows_won?
+    (0 .. 2).any? { |row| moves.each_slice(2).map(&:first).map(&:first).select { |x| x == row }.compact.count == 3 }
   end
 
   def diagonals_won?
   end
+
 
 end
