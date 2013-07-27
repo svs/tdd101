@@ -2,9 +2,10 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title reveal.js - The HTML Presentation Framework
-    %meta{:content => "A framework for easily creating beautiful presentations using HTML", :name => "description"}/
-    %meta{:content => "Hakim El Hattab", :name => "author"}/
+    %title TDD 101: Presentation slides
+    %meta{:content => "Presentation slides for the TDD101 talk", :name => "description"}/
+    %meta{:content => "Siddharth Sharma", :name => "author"}/
+    %meta{:content => "Anshul Khandelwal", :name => "author"}/
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
     %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
@@ -14,7 +15,7 @@
     %link{:href => "lib/css/zenburn.css", :rel => "stylesheet"}/
     :javascript
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    <script src="lib/js/html5shiv.js"></script>
+    %script{:src => "lib/js/html5shiv.js"}
   %body
     .reveal
       / Used to fade in a background when a specific slide state is reached
@@ -28,7 +29,7 @@
           %h1 Who are we?
           %h2
             %strong
-              = "@_svs_"
+              @_svs_
           %h3 https://github.com/svs
           %h3.fragment rubyist since 2008
           %h3.fragment creator of dm-pg-types gem
@@ -36,30 +37,42 @@
           %h1 Who are we?
           %h2
             %strong
-              = "@_svs_"
-          %h3.fragment co-founder of <strong>digiDoc</strong> (http://digidoc.co.in) and <strong>rBus</strong> (http://rBus.in)
-          %h3.fragment co-founder of <strong>wrok.in</strong>
-          %h3.fragment Currently CTO at <strong>embibe.com</strong>
-
+              @_svs_
+          %h3.fragment
+            co-founder of
+            %strong digiDoc
+            (http://digidoc.co.in) and
+            %strong rBus
+            (http://rBus.in)
+          %h3.fragment
+            co-founder of
+            %strong wrok.in
+          %h3.fragment
+            Currently CTO at
+            %strong embibe.com
         %section
           %h1 Who are we?
           %h2
             %strong
-              = "@_anshulk"
-          %h3= "https://github.com/anshul"
+              @_anshulk
+          %h3 https://github.com/anshul
           %h3.fragment rubyist since 2007
-          %h3.fragment co-founder of <strong>CubicTree</strong> ( tech solutions for the law sector)
-          %h3.fragment co-founder of <strong>wrok.in</strong>
-          %h3.fragment Currently VP Data and Engg at <strong>embibe.com</strong>
-
-
+          %h3.fragment
+            co-founder of
+            %strong CubicTree
+            ( tech solutions for the law sector)
+          %h3.fragment
+            co-founder of
+            %strong wrok.in
+          %h3.fragment
+            Currently VP Engg and Data at
+            %strong embibe.com
         %section
           %h3 WHAT DO WE WANT AS DEVELOPERS?
-          %img.fragment{:src => "images/happy-programmer.jpg"}
+          %img.fragment{:alt => "A happy programmer", :src => "images/happy-programmer.jpg"}/
           .fragment We "write" and "deploy" software. Both of these must be fun.
           .fragment We don't want to do "boring stuff"
           .fragment We want time to play with cool new stuff
-
         %section
           %h3 BUT INSTEAD!
           .fragment Manual deployments (error prone, boring)
@@ -70,41 +83,64 @@
           .fragment Undefined behaviour
         %section
           %h3 BUT INSTEAD!
-          %img{:src => "images/stressed-coder.jpg", :width => "200%"}
+          %img{:alt => "A stressed coder", :src => "images/stressed-coder.jpg", :width => "200%"}/
         %section
           %h2 IF ONLY....
           %h2 ..there were some way
           %p
-            %i that we could <strong>automatically verify</strong> the correctness of our programs?
+            %i
+              that we could
+              %strong automatically verify
+              the correctness of our programs?
         %section
-          %img.fragment{:src => "images/morpheus.jpg", :width => "150%"}
+          %img.fragment{:alt => "Morpheus: What if I told you, we can write programs to check our programs", :src => "images/morpheus.jpg", :width => "150%"}/
         %section
           %blockquote
-            %span.fragment
+            %span.fragment &nbsp;
             Use computers to do work
             %span.fragment
               Use humans to drink beer with
-          %br
-            %i.fragment - Zach Holman
+          %br/
+          %i.fragment - Zach Holman
         %section
           %h1 RSpec
           %p
-            %i RSpec let's you write <strong>executable specifications</strong> for your Ruby programs
-          %img.fragment{:src => "images/rspec.png"}
+            %i
+              RSpec let's you write
+              %strong executable specifications
+              for your Ruby programs
+          %img.fragment{:alt => "A sample of a rspec file to show how it looks", :src => "images/rspec.png"}/
         %section
           %h2 What is TDD?
           %p.fragment
-            %i Making <strong>testing a first class concern</strong> while developing.
+            %i
+              Making
+              %strong testing a first class concern
+              while developing.
+            %br/
           %h2.fragment Why?
           %ul
             %li.fragment
-              %i The same things that make your code <strong>easy to test</strong>, make it <strong>easy to change</strong>!
+              %i
+                The same things that make your code
+                = succeed "," do
+                  %strong easy to test
+                make it
+                = succeed "!" do
+                  %strong easy to change
             %li.fragment
-              %i Guarantee <strong>behaviour</strong>.
+              %i
+                Guarantee
+                = succeed "." do
+                  %strong behaviour
             %li.fragment
-              %i <strong>Refactor</strong> LIKE A BOSS!
+              %i
+                %strong Refactor
+                LIKE A BOSS!
             %li.fragment
-              %i <strong>Deploy</strong> LIKE A BOSS!
+              %i
+                %strong Deploy
+                LIKE A BOSS!
         %section
           %h1 BUT....
           .fragment it's time consuming
@@ -112,37 +148,80 @@
           .fragment it's BORING!
         %section
           That's ok. It's called the learning curve!
-          %img.fragment{:src => "images/learning-curve.png"}
-
-      / The navigational controls UI
+          %img.fragment{:alt => "Sample learning curve", :src => "images/learning-curve.png"}/
+        %section
+          %h2 Live Session: Tooling for tests
+        %section
+          %h2 Rspec basics
+          %pre
+            %code{"data-trim" => ""}
+              require 'spec_helper'
+              %span.fragment
+                %span.fragment
+                  \# Example Group
+                  describe Array do
+                  %span.fragment
+                    \# Example Group
+                    context "with 1 element" do
+                    %span.fragment
+                      subject { [1] }
+                      \# Example
+                      it { should_not be_empty }
+                    %span.fragment
+                      \# Example
+                      its(:count) { should == 1 }
+                    end
+                  end
+        %section
+          %h2 Rspec Basics
+          .fragment
+            describe, context, it, specify
+            %pre
+              %code{"data-trim" => ""}
+                :preserve
+                  describe Class do
+                    context "when/with something" do
+                      describe ".class_method" do
+                      describe "#method" do
+                            .fragment
+            should, expect
+            %pre
+              %code{"data-trim" => ""}
+                :preserve
+                  [].should be_instance_of(Array)
+                  expect { 1/0 }.to raise_error(ZeroDivisionError)
+            subject, let
+            %pre
+              %code{"data-trim" => ""}
+                :preserve
+                   [].should be_instance_of(Array)
+                   expect { 1/0 }.to raise_error(ZeroDivisionError)
       %aside.controls
-        %a.left{:href => "#"} <
-        %a.right{:href => "#"} >
+        %a.left{:href => "#"} &lt;
+        %a.right{:href => "#"} &gt;
         %a.up{:href => "#"} ^
         %a.down{:href => "#"} !
       / Presentation progress bar
       .progress
-        %span
+        %span &nbsp;
     %script{:src => "lib/js/head.min.js"}
     %script{:src => "js/reveal.min.js"}
     :javascript
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-
-      theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
-      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
-
-      // Optional libraries used to extend on reveal.js
-      dependencies: [
-      { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-      { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-      ]
+        controls: true,
+        progress: true,
+        history: true,
+  
+        theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+  
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+          { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+        ]
       });

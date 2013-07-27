@@ -16,7 +16,7 @@
     <script>
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
-    <script src="lib/js/html5shiv.js"></script>
+    <script src='lib/js/html5shiv.js'></script>
   </head>
   <body>
     <div class='reveal'>
@@ -46,9 +46,21 @@
               @_svs_
             </strong>
           </h2>
-          <h3 class='fragment'>co-founder of <strong>digiDoc</strong> (http://digidoc.co.in) and <strong>rBus</strong> (http://rBus.in)</h3>
-          <h3 class='fragment'>co-founder of <strong>wrok.in</strong></h3>
-          <h3 class='fragment'>Currently CTO at <strong>embibe.com</strong></h3>
+          <h3 class='fragment'>
+            co-founder of
+            <strong>digiDoc</strong>
+            (http://digidoc.co.in) and
+            <strong>rBus</strong>
+            (http://rBus.in)
+          </h3>
+          <h3 class='fragment'>
+            co-founder of
+            <strong>wrok.in</strong>
+          </h3>
+          <h3 class='fragment'>
+            Currently CTO at
+            <strong>embibe.com</strong>
+          </h3>
         </section>
         <section>
           <h1>Who are we?</h1>
@@ -59,13 +71,23 @@
           </h2>
           <h3>https://github.com/anshul</h3>
           <h3 class='fragment'>rubyist since 2007</h3>
-          <h3 class='fragment'>co-founder of <strong>CubicTree</strong> ( tech solutions for the law sector)</h3>
-          <h3 class='fragment'>co-founder of <strong>wrok.in</strong></h3>
-          <h3 class='fragment'>Currently VP Engg and Data at <strong>embibe.com</strong></h3>
+          <h3 class='fragment'>
+            co-founder of
+            <strong>CubicTree</strong>
+            ( tech solutions for the law sector)
+          </h3>
+          <h3 class='fragment'>
+            co-founder of
+            <strong>wrok.in</strong>
+          </h3>
+          <h3 class='fragment'>
+            Currently VP Engg and Data at
+            <strong>embibe.com</strong>
+          </h3>
         </section>
         <section>
           <h3>WHAT DO WE WANT AS DEVELOPERS?</h3>
-          <img class='fragment' src='images/happy-programmer.jpg' alt="A happy programmer">
+          <img alt='A happy programmer' class='fragment' src='images/happy-programmer.jpg'>
           <div class='fragment'>We "write" and "deploy" software. Both of these must be fun.</div>
           <div class='fragment'>We don't want to do "boring stuff"</div>
           <div class='fragment'>We want time to play with cool new stuff</div>
@@ -81,17 +103,21 @@
         </section>
         <section>
           <h3>BUT INSTEAD!</h3>
-          <img src='images/stressed-coder.jpg' width='200%' alt="A stressed coder">
+          <img alt='A stressed coder' src='images/stressed-coder.jpg' width='200%'>
         </section>
         <section>
           <h2>IF ONLY....</h2>
           <h2>..there were some way</h2>
           <p>
-            <i>that we could <strong>automatically verify</strong> the correctness of our programs?</i>
+            <i>
+              that we could
+              <strong>automatically verify</strong>
+              the correctness of our programs?
+            </i>
           </p>
         </section>
         <section>
-          <img class='fragment' src='images/morpheus.jpg' width='150%' alt="Morpheus: What if I told you, we can write programs to check our programs">
+          <img alt='Morpheus: What if I told you, we can write programs to check our programs' class='fragment' src='images/morpheus.jpg' width='150%'>
         </section>
         <section>
           <blockquote>
@@ -102,34 +128,56 @@
             </span>
           </blockquote>
           <br>
-            <i class='fragment'>- Zach Holman</i>
-          </br>
+          <i class='fragment'>- Zach Holman</i>
         </section>
         <section>
           <h1>RSpec</h1>
           <p>
-            <i>RSpec let's you write <strong>executable specifications</strong> for your Ruby programs</i>
+            <i>
+              RSpec let's you write
+              <strong>executable specifications</strong>
+              for your Ruby programs
+            </i>
           </p>
-          <img class='fragment' src='images/rspec.png' alt="A sample of a rspec file to show how it looks">
+          <img alt='A sample of a rspec file to show how it looks' class='fragment' src='images/rspec.png'>
         </section>
         <section>
           <h2>What is TDD?</h2>
           <p class='fragment'>
-          <i>Making <strong>testing a first class concern</strong> while developing.</i><br />
+            <i>
+              Making
+              <strong>testing a first class concern</strong>
+              while developing.
+            </i>
+            <br>
           </p>
           <h2 class='fragment'>Why?</h2>
           <ul>
             <li class='fragment'>
-              <i>The same things that make your code <strong>easy to test</strong>, make it <strong>easy to change</strong>!</i>
+              <i>
+                The same things that make your code
+                <strong>easy to test</strong>,
+                make it
+                <strong>easy to change</strong>!
+              </i>
             </li>
             <li class='fragment'>
-              <i>Guarantee <strong>behaviour</strong>.</i>
+              <i>
+                Guarantee
+                <strong>behaviour</strong>.
+              </i>
             </li>
             <li class='fragment'>
-              <i><strong>Refactor</strong> LIKE A BOSS!</i>
+              <i>
+                <strong>Refactor</strong>
+                LIKE A BOSS!
+              </i>
             </li>
             <li class='fragment'>
-              <i><strong>Deploy</strong> LIKE A BOSS!</i>
+              <i>
+                <strong>Deploy</strong>
+                LIKE A BOSS!
+              </i>
             </li>
           </ul>
         </section>
@@ -141,10 +189,48 @@
         </section>
         <section>
           That's ok. It's called the learning curve!
-          <img class='fragment' src='images/learning-curve.png' alt="Sample learning curve">
+          <img alt='Sample learning curve' class='fragment' src='images/learning-curve.png'>
+        </section>
+        <section>
+          <h2>Live Session: Tooling for tests</h2>
+        </section>
+        <section>
+          <h2>Rspec basics</h2>
+          <pre><code data-trim=''>require 'spec_helper'
+          <span class='fragment'>
+            <span class='fragment'>
+              # Example Group
+              describe Array do
+              <span class='fragment'>
+                # Example Group
+                context "with 1 element" do
+                <span class='fragment'>
+                  subject { [1] }
+                  # Example
+                  it { should_not be_empty }
+                </span>
+                <span class='fragment'>
+                  # Example
+                  its(:count) { should == 1 }
+                  end
+                </span>
+                end
+              </span>
+            </span>
+          </span></code></pre>
+        </section>
+        <section>
+          <h2>Rspec Basics</h2>
+          <div class='fragment'>
+            describe, context, it, specify
+            <pre><code data-trim=''>describe Class do&#x000A;  context "when/with something" do&#x000A;    describe ".class_method" do&#x000A;    describe "#method" do&#x000A;          .fragment</code></pre>
+            should, expect
+            <pre><code data-trim=''>[].should be_instance_of(Array)&#x000A;expect { 1/0 }.to raise_error(ZeroDivisionError)</code></pre>
+            subject, let
+            <pre><code data-trim=''> [].should be_instance_of(Array)&#x000A; expect { 1/0 }.to raise_error(ZeroDivisionError)</code></pre>
+          </div>
         </section>
       </div>
-      <!-- The navigational controls UI -->
       <aside class='controls'>
         <a class='left' href='#'>&lt;</a>
         <a class='right' href='#'>&gt;</a>
@@ -159,25 +245,23 @@
     <script src='lib/js/head.min.js'></script>
     <script src='js/reveal.min.js'></script>
     <script>
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
+        controls: true,
+        progress: true,
+        history: true,
       
-      theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
-      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+        theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
       
-      // Optional libraries used to extend on reveal.js
-      dependencies: [
-      { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-      { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-      ]
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+          { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+        ]
       });
     </script>
   </body>
