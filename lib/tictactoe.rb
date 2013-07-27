@@ -1,3 +1,4 @@
+require_relative './board.rb'
 class TicTacToe
 
   attr_accessor :players, :moves
@@ -23,13 +24,15 @@ class TicTacToe
   end
 
   def finished?
+    won?
   end
 
   def won?
-    columns_won? || rows_won? || diagonals_won?
+    board.won?
   end
 
   def winner
+    players[board.winning_player] if won?
   end
 
   def add_player(name)
@@ -39,14 +42,12 @@ class TicTacToe
 
   private
 
-  def columns_won?
+  def board
+    Board.new(moves)
   end
 
-  def rows_won?
-    (0 .. 2).any? { |row| moves.each_slice(2).map(&:first).map(&:first).select { |x| x == row }.compact.count == 3 }
-  end
-
-  def diagonals_won?
+  def last_player
+    (players - [current_player]).first
   end
 
 

@@ -66,9 +66,11 @@ describe TicTacToe do
 
         context "finished game" do
           describe "won game" do
-            let(:row_winning_moves) {[[0,0],[1,1],[0,1],[2,2],[0,2]]}
-            let(:row_won_game) { game_with_two_players.tap{|g| row_winning_moves.each {|m| g.add_move(m[0],m[1])}}}
-            subject { row_won_game }
+            before(:each) {
+              Board.any_instance.stub(:won?).and_return(true)
+              Board.any_instance.stub(:winning_player).and_return(0)
+            }
+
             it { should be_won }
             it { should be_finished }
             its(:winner) { should == "foo" }
