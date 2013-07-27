@@ -47,11 +47,35 @@ describe TicTacToe do
       its(:winner) { should be_nil }
       its(:current_player) { should == "foo" }
       specify { expect { subject.add_move(1,1) }.to_not raise_error }
-      it "should add moves" do
-        subject.add_move(1,1)
-        #subject.moves.should ==
-      end
+      context "while adding moves" do
+        it "should add valid moves" do
+          subject.add_move(1,1)
+          subject.moves.should == [[1,1]]
+          subject.current_player.should == "bar"
+        end
 
+        it "should not allow duplicate moves" do
+          subject.add_move(1,1)
+          expect { subject.add_move(1,1) }.to raise_error(ArgumentError)
+        end
+
+        it "should not allow moves outside the board" do
+          expect { subject.add_move(3,3) }.to raise_error(ArgumentError)
+          expect { subject.add_move(-1,1) }.to raise_error(ArgumentError)
+        end
+
+        context "finished game" do
+          describe "won game" do
+            let(:row_winning_moves) {[[0,0],[1,1],[0,1],[2,2],[0,2]]}
+            let(:row_won_game) { game_with_two_players.tap{|g| row_winning_moves.each {|m| g.add_move(m[0],m[1])}}}
+            subject { row_won_game }
+            its(:rows_won?) { should be_true }
+            #it { should be_won }
+            #it { should be_finished }
+            #its(:winner) { should == "foo" }
+          end
+        end
+      end
 
     end
 
