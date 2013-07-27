@@ -151,11 +151,14 @@
           %img.fragment{:alt => "Sample learning curve", :src => "images/learning-curve.png"}/
         %section
           %h2 Live Session: Tooling for tests
+          .fragment
+            rspec
+          .fragment
+            guard
         %section
           %h2 Rspec basics
           %pre
             %code{"data-trim" => ""}
-              require 'spec_helper'
               %span.fragment
                 %span.fragment
                   \# Example Group
@@ -170,32 +173,80 @@
                     %span.fragment
                       \# Example
                       its(:count) { should == 1 }
-                    end
                   end
+                end
         %section
           %h2 Rspec Basics
           .fragment
-            describe, context, it, specify
+            describe
+          .fragment
+            context
+          .fragment
+            before and after hooks
+          .fragment
             %pre
               %code{"data-trim" => ""}
                 :preserve
                   describe Class do
+
+                    before(:all) { @post = FactoryGirl.create(:post) }
+                    after(:all) { @post.destroy }
+
                     context "when/with something" do
-                      describe ".class_method" do
-                      describe "#method" do
-                            .fragment
-            should, expect
+
+                      before(:each) { @post.something }
+
+                      specify { @post.should be_valid }
+                      it { should_not be_valid }
+        %section
+          %h2 subject
+          .fragment
+            implicit subject
             %pre
               %code{"data-trim" => ""}
                 :preserve
-                  [].should be_instance_of(Array)
-                  expect { 1/0 }.to raise_error(ZeroDivisionError)
-            subject, let
+                  describe Array do
+                    it { subject.should == [] }
+          .fragment
+            explicit subject
             %pre
               %code{"data-trim" => ""}
                 :preserve
-                   [].should be_instance_of(Array)
-                   expect { 1/0 }.to raise_error(ZeroDivisionError)
+                  describe Array do
+                    subject { Array.new(1)
+                    it { subject.should == [1] }
+          .fragment
+            subject attributes
+            %pre
+              %code{"data-trim" => ""}
+                :preserve
+                  describe Array do
+                    its(:count) { should == 0 }
+        %section
+          %h2 let
+          .fragment
+            implicit subject
+            %pre
+              %code{"data-trim" => ""}
+                :preserve
+                  subject { FactoryGirl.create(:post) }
+                  let(:post) { Post.new }
+                  it { should be_valid }
+                  it { should != :post }
+        %section
+          %h2 How does this work?
+          .fragment
+            describe creates a subclass of RSpec::Core::ExampleGroup and executes the block in it's context.
+          .fragment
+            context creates a subgroup which is a subclass of the outer class.
+          .fragment
+            it and specify blocks execute in the context of an instance of the group in which they are declared.
+        %section
+          %h2 Live Session: TDD
+          .fragment
+            Tic-Tac-Toe
+        %section
+          %h2 Open discussion
       %aside.controls
         %a.left{:href => "#"} &lt;
         %a.right{:href => "#"} &gt;

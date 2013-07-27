@@ -193,11 +193,16 @@
         </section>
         <section>
           <h2>Live Session: Tooling for tests</h2>
+          <div class='fragment'>
+            rspec
+          </div>
+          <div class='fragment'>
+            guard
+          </div>
         </section>
         <section>
           <h2>Rspec basics</h2>
-          <pre><code data-trim=''>require 'spec_helper'
-          <span class='fragment'>
+          <pre><code data-trim=''><span class='fragment'>
             <span class='fragment'>
               # Example Group
               describe Array do
@@ -212,23 +217,70 @@
                 <span class='fragment'>
                   # Example
                   its(:count) { should == 1 }
-                  end
                 </span>
                 end
               </span>
+              end
             </span>
           </span></code></pre>
         </section>
         <section>
           <h2>Rspec Basics</h2>
           <div class='fragment'>
-            describe, context, it, specify
-            <pre><code data-trim=''>describe Class do&#x000A;  context "when/with something" do&#x000A;    describe ".class_method" do&#x000A;    describe "#method" do&#x000A;          .fragment</code></pre>
-            should, expect
-            <pre><code data-trim=''>[].should be_instance_of(Array)&#x000A;expect { 1/0 }.to raise_error(ZeroDivisionError)</code></pre>
-            subject, let
-            <pre><code data-trim=''> [].should be_instance_of(Array)&#x000A; expect { 1/0 }.to raise_error(ZeroDivisionError)</code></pre>
+            describe
           </div>
+          <div class='fragment'>
+            context
+          </div>
+          <div class='fragment'>
+            before and after hooks
+          </div>
+          <div class='fragment'>
+            <pre><code data-trim=''>describe Class do&#x000A;&#x000A;  before(:all) { @post = FactoryGirl.create(:post) }&#x000A;  after(:all) { @post.destroy }&#x000A;&#x000A;  context "when/with something" do&#x000A;&#x000A;    before(:each) { @post.something }&#x000A;&#x000A;    specify { @post.should be_valid }&#x000A;    it { should_not be_valid }</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>subject</h2>
+          <div class='fragment'>
+            implicit subject
+            <pre><code data-trim=''>describe Array do&#x000A;  it { subject.should == [] }</code></pre>
+          </div>
+          <div class='fragment'>
+            explicit subject
+            <pre><code data-trim=''>describe Array do&#x000A;  subject { Array.new(1)&#x000A;  it { subject.should == [1] }</code></pre>
+          </div>
+          <div class='fragment'>
+            subject attributes
+            <pre><code data-trim=''>describe Array do&#x000A;  its(:count) { should == 0 }</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>let</h2>
+          <div class='fragment'>
+            implicit subject
+            <pre><code data-trim=''>subject { FactoryGirl.create(:post) }&#x000A;let(:post) { Post.new }&#x000A;it { should be_valid }&#x000A;it { should != :post }</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>How does this work?</h2>
+          <div class='fragment'>
+            describe creates a subclass of RSpec::Core::ExampleGroup and executes the block in it's context.
+          </div>
+          <div class='fragment'>
+            context creates a subgroup which is a subclass of the outer class.
+          </div>
+          <div class='fragment'>
+            it and specify blocks execute in the context of an instance of the group in which they are declared.
+          </div>
+        </section>
+        <section>
+          <h2>Live Session: TDD</h2>
+          <div class='fragment'>
+            Tic-Tac-Toe
+          </div>
+        </section>
+        <section>
+          <h2>Open discussion</h2>
         </section>
       </div>
       <aside class='controls'>
