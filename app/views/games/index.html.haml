@@ -1,0 +1,9 @@
+%h1
+  Welcome to Tic Tac Toe
+
+%p
+  Hey play!
+  = simple_form_for Game.new do |f|
+    = f.input :player_one_name, label: "Player One"
+    = f.input :player_two_name, label: "Player Two"
+    = f.submit "Play a new game"

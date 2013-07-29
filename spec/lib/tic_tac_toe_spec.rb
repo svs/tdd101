@@ -1,5 +1,4 @@
-require 'rspec'
-require './lib/tictactoe.rb'
+require 'spec_helper'
 
 describe TicTacToe do
 
